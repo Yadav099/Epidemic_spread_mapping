@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#main-container {
+  height: 1000px;
+  width: 100%;
+  background-color: #689d99;
+}
+h1 {
+  display: block;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+input {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 30px;
+}
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+}

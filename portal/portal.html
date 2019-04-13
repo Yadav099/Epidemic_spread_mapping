@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SUbmission portal</title>
+    <link rel="stylesheet" href="portal.css
+    ">
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="container">
+        <h1>Welcome to submission portal</h1>
+        <div id="form-container">
+          <div id="new-form">
+            <form action="/submit" method="POST">
+              <label for="">Name of the disease:</label> <input type="text" name="name" /> <br>
+              <label for="">Number of affected ppl:</label> <input type="number" name="affectedPpl" /> <br>
+              <label for="">LifeCount:</label><input type="number" name="LifeCount" /> <br>
+              <label for="">possible precautions:</label><input type="text" name="precautions" /><br>
+              <H5>facility to treat:</H5>
+              <input type="radio" name="facilityToTreat" value="yes" checked />
+              yes<br />
+              <input type="radio" name="facilityToTreat" value="no" />
+              No<br />
+
+              <H5>contagious:</H5>
+              <input type="radio" name="contagious" value="yes" checked />
+              yes<br />
+              <input type="radio" name="contagious" value="no" /> No<br />
+
+              <H5>Spread type:</H5>
+              <input type="radio" name="SpreadType" value="airborne" checked />
+              airborne <br />
+              <input
+                type="radio"
+                name="SpreadType"
+                value="waterborne"
+              />waterborne
+              <br />
+              <input
+                type="radio"
+                name="SpreadType"
+                value="animaltoperson"
+              />animal to person <br />
+
+              <H5>Status:</H5>
+              <input type="radio" name="Status" value="Curable" checked />
+              Curable <br />
+              <input type="radio" name="Status" value="InCurable" />InCurable
+              <br />
+
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+
+          <hr />
+
+         
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

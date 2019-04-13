@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Front-End</title>
+    <link rel="stylesheet" href="client.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <div>
+          <h3 id="di1">DISEASES AROUND ME!!</h3>
+          <input type="text" name="d_name" />
+          <button id="search">SEARCH</button>
+          <div id="info"></div>
+        </div>
+      </div>
+      <div id="right">
+        <div id="map"></div>
+        <script>
+          function initMap(lat, lng) {
+            console.log(lat, lng);
+            var myLatLng = { lat, lng };
+
+            // Create a map object and specify the DOM element
+            // for display.
+            var map = new google.maps.Map(document.getElementById("map"), {
+              center: myLatLng,
+              zoom: 12
+            });
+
+            var markers = [
+              {
+                coords: { lat, lng }
+              }
+            ];
+            for (var i = 0; i < markers.length; i++) addMarker(markers[i]);
+
+            function addMarker(props) {
+              var marker = new google.maps.Marker({
+                position: props.coords,
+                map: map,
+                icon: props.iconImage
+              });
+              var infow = new google.maps.InfoWindow({
+                content: props.content
+              });
+
+              marker.addListener("click", function() {
+                infow.open(map, marker);
+              });
+
+              var circle = new google.maps.Circle({
+                map: map,
+                center: new google.maps.LatLng(props.coords),
+                radius: 10000
+              });
+            }
+          }
+        </script>
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEZkNRRGU-7kSSmVRibkVxDNOEExB3eQE"
+          async
+          defer
+        ></script>
+      </div>
+    </div>
+  </body>
+
+  <script src="./client.js"></script>
+</html>
